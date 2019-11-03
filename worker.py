@@ -15,9 +15,9 @@ def generate_csv_bot(collection):
             writer = csv.DictWriter(csv_file, fieldnames=csv_columns)
             writer.writeheader()
             for key in result['results']:
-                csv_file.write("%s,%s\n" % (key['_id'], key['value']))
+                csv_file.write('"%s",%s\n' % (key['_id'], key['value']))
 
-        send_mail('anton@bluelogic.ae', "Attached Report Weekly",collection)
+        send_mail('anton@bluelogic.ae', "Attached Report Weekly", collection)
         return print(result)
     except ValueError as e:
         return print(e)
