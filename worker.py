@@ -17,7 +17,8 @@ def generate_csv_bot(collection):
             for key in result['results']:
                 csv_file.write('"%s",%s\n' % (key['_id'], key['value']))
 
-        send_mail('anton@bluelogic.ae', "Attached Report Weekly", collection)
+        send_mail('rino@bluelogic.ae', "Attached Report Weekly of "+collection, collection)
+        send_mail('anton@bluelogic.ae', "Attached Report Weekly of"+collection, collection)
         return print(result)
     except ValueError as e:
         return print(e)

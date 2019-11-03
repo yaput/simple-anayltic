@@ -11,7 +11,7 @@ def send_mail(receiver_email, text_message, collection):
         password = "BlueLogic@123"
 
         message = MIMEMultipart("alternative")
-        message["Subject"] = "No-reply Generated CSV Unhandled intent Fallback"
+        message["Subject"] = "No-reply Generated CSV Unhandled intent Fallback "+collection
         message["From"] = sender_email
         message["To"] = receiver_email
 
