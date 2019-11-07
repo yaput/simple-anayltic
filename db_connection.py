@@ -15,8 +15,8 @@ def get_all_user_detail(collection):
 
 
 def get_fallback_intent(collection):
-    reduce = Code(open("reduce.js").read())
-    mapping = Code(open("map.js", "r").read())
+    reduce = Code(open("query_js/reduce.js").read())
+    mapping = Code(open("query_js/fallback_map.js", "r").read())
     try:
         result = json.loads(json_util.dumps(db.get_collection(collection).map_reduce(mapping, reduce, out={'inline': 1},
                                                                                      full_response=False)))
@@ -24,4 +24,14 @@ def get_fallback_intent(collection):
     except ValueError as e:
         return e
 
+
+def all_intent_selected(collection):
+    reduce = Code(open("query_js/reduce.js").read())
+    mapping = Code(open("query_js/all_intent_map.js", "r").read())
+    try:
+        result = json.loads(json_util.dumps(db.get_collection(collection).map_reduce(mapping, reduce, out={'inline': 1},
+                                                                                     full_response=False)))
+        return result
+    except ValueError as e:
+        return e
 
