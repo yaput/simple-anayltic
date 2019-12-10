@@ -1,9 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from db_connection import get_fallback_intent, all_intent_selected
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
 import pandas as pd
 
 app = Flask(__name__)
