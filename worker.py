@@ -19,7 +19,7 @@ def generate_csv_bot(collection):
 
         send_mail('rino@bluelogic.ae', "Attached Report Weekly of "+collection, collection)
         send_mail('anton@bluelogic.ae', "Attached Report Weekly of"+collection, collection)
-        send_mail('nikita@@bluelogic.ae', "Attached Report Weekly of"+collection, collection)
+        send_mail('nikita@bluelogic.ae', "Attached Report Weekly of"+collection, collection)
         return print(result)
     except ValueError as e:
         return print(e)
